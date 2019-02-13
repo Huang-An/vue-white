@@ -22,7 +22,7 @@ Object.keys(components).forEach(key => {
 });
 
 const resolve = function (dir) {
-    return path.join(__dirname, '..', dir)
+    return path.join(__dirname, '..', dir);
 };
 
 module.exports = {
@@ -72,7 +72,3 @@ module.exports = {
         new VueLoaderPlugin()
     ]
 };
-
-
-
-

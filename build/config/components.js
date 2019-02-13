@@ -1,3 +1,3 @@
 module.exports = {
-    "button": "./packages/button/index.js"
+    'button': './packages/button/index.js'
 };

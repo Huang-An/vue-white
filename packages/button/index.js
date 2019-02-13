@@ -1,4 +1,4 @@
-import WButton from "./src/main";
+import WButton from './src/main';
 
 WButton.install = function (Vue) {
     if (WButton.name) {
