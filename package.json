@@ -14,7 +14,9 @@
   },
   "author": "huangAn",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "vue": "^2.6.6"
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
@@ -52,7 +54,7 @@
     "style-loader": "^0.23.1",
     "uppercamelcase": "^3.0.0",
     "url-loader": "^1.1.2",
-    "vue": "^2.5.22",
+    "vue": "^2.6.6",
     "vue-loader": "^15.6.2",
     "vue-template-compiler": "^2.5.22",
     "vue-template-es2015-compiler": "^1.8.2",

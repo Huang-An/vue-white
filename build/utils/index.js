@@ -16,6 +16,7 @@ exports.errorOverlay = function () {
 };
 
 exports.alias = {
+    'vue$': 'vue/dist/vue.esm.js',
     src: path.resolve(__dirname, '../src'),
     packages: path.resolve(__dirname, '../packages'),
     example: path.resolve(__dirname, '../example'),

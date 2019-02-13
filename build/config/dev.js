@@ -6,7 +6,7 @@ module.exports = {
     // 资源路径
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    host: '0.0.0.0',
+    host: 'localhost',
     port: 7070,
     // 是否自动开启浏览器
     autoOpenBrowser: true,

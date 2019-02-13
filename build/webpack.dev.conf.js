@@ -7,6 +7,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const portfinder = require('portfinder');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ProgressBarPlugin = require('progress-bar-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 const devWebpackConfig = {
     mode: 'development',
@@ -105,7 +107,9 @@ const devWebpackConfig = {
         new ExtractTextPlugin({
             filename: 'static/css/[name].[contenthash].css',
             allChunks: true
-        })
+        }),
+        new ProgressBarPlugin(),
+        new VueLoaderPlugin()
     ]
 };
 
