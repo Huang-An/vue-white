@@ -7,7 +7,7 @@ const OUTPUT_PATH = path.resolve(BASE_PATH, 'src', 'index.scss');
 // 免引入
 const WHITE_LIST = [];
 // 基础引入
-const BASE_LIST = ['base'];
+const BASE_LIST = ['reset'];
 // 需要引入
 const IMPORT_LIST = BASE_LIST.concat(Object.keys(components));
 // 文件是否存在

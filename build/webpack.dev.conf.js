@@ -1,6 +1,6 @@
 const utils = require('./utils');
-const webpack = require('webpack');
 const dev = require('./config/dev');
+const webpack = require('webpack');
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -27,7 +27,16 @@ const devWebpackConfig = {
     },
     module: {
         rules: [
-            utils.createLintingRule(),
+            {
+                test: /\.(js|vue)$/,
+                loader: 'eslint-loader',
+                enforce: 'pre',
+                include: [path.resolve(__dirname, '../example')],
+                options: {
+                    formatter: require('eslint-friendly-formatter'),
+                    emitWarning: !dev.showEslintErrorsInOverlay
+                }
+            },
             {
                 test: /\.vue$/,
                 loader: 'vue-loader'
@@ -41,7 +50,7 @@ const devWebpackConfig = {
                 loader: 'url-loader',
                 options: {
                     limit: 10000,
-                    name: 'static/img/[name].[hash:7].[ext]'
+                    name: '/static/img/[name].[hash:7].[ext]'
                 }
             },
             {
@@ -49,7 +58,7 @@ const devWebpackConfig = {
                 loader: 'url-loader',
                 options: {
                     limit: 10000,
-                    name: 'static/media/[name].[hash:7].[ext]'
+                    name: '/static/media/[name].[hash:7].[ext]'
                 }
             },
             {
@@ -57,7 +66,7 @@ const devWebpackConfig = {
                 loader: 'url-loader',
                 options: {
                     limit: 10000,
-                    name: 'static/fonts/[name].[hash:7].[ext]'
+                    name: '/static/fonts/[name].[hash:7].[ext]'
                 }
             }
         ]
