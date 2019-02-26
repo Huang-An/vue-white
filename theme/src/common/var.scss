@@ -1,0 +1,9 @@
+@import "utils";
+
+// 全局默认字体大小
+$font-size_base: pxToVw(12px);
+
+// 全局默认主题颜色
+$theme-color_primary: #ccc;
+$theme-color_default: #ccc;
+$theme-color_warning: #ccc;

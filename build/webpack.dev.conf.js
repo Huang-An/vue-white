@@ -27,16 +27,7 @@ const devWebpackConfig = {
     },
     module: {
         rules: [
-            {
-                test: /\.(js|vue)$/,
-                loader: 'eslint-loader',
-                enforce: 'pre',
-                include: [path.resolve(__dirname, '../example')],
-                options: {
-                    formatter: require('eslint-friendly-formatter'),
-                    emitWarning: !dev.showEslintErrorsInOverlay
-                }
-            },
+            utils.createLintingRule(),
             {
                 test: /\.vue$/,
                 loader: 'vue-loader'
@@ -44,6 +35,14 @@ const devWebpackConfig = {
             {
                 test: /\.js$/,
                 loader: 'babel-loader'
+            },
+            {
+                test: /\.css$/,
+                loaders: ['style-loader', 'css-loader', 'postcss-loader']
+            },
+            {
+                test: /\.scss$/,
+                loaders: ['style-loader', 'css-loader', 'sass-loader']
             },
             {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -92,7 +91,7 @@ const devWebpackConfig = {
         open: dev.autoOpenBrowser,
         overlay: utils.errorOverlay(),
         publicPath: dev.assetsPublicPath,
-        quiet: true // necessary for FriendlyErrorsPlugin
+        quiet: false // necessary for FriendlyErrorsPlugin
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),

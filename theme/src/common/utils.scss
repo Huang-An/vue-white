@@ -1,0 +1,7 @@
+// 设计稿默认750px
+$screen-base: 750px !default;
+
+// px转vw单位
+@function pxToVw($size) {
+  @return 100vw * $size / $screen-base;
+}

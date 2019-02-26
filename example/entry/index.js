@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import App from './app';
 import white from '../../lib/white.common';
+import '../../lib/theme/index.css';
 
 Vue.use(white);
 
