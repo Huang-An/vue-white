@@ -1,5 +1,43 @@
-@import "common/utils";
+@import "mixins/mixins";
+// button 大小
+@mixin button-size($padding, $font-size, $border-radius) {
+  padding: $padding;
+  font-size: $font-size;
+  border-radius: $border-radius;
+}
 
-.test {
-  font-size: pxToVw(13px);
+// button 类型
+@mixin button-type($button-bg, $button-color, $border) {
+  background-color: $button-bg;
+  color: $button-color;
+  border: $border;
+}
+
+@include b(button) {
+  box-sizing: border-box;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  outline: none;
+  & + & {
+    margin-left: pxToVw(10px);
+  }
+  @include m(default) {
+    @include button-type($button-bg_default, $button-color_default, $button-border_default);
+  }
+  @include m(primary) {
+    @include button-type($button-bg_primary, $button-color_primary, $button-border_primary);
+  }
+  @include m(warning) {
+    @include button-type($button-bg_warning, $button-color_warning, $button-border_warning);
+  }
+  @include m(small) {
+    @include button-size($button-padding_small, $button-font_small, $button-radius_small);
+  }
+  @include m(medium) {
+    @include button-size($button-padding_medium, $button-font_medium, $button-radius_medium);
+  }
+  @include m(big) {
+    @include button-size($button-padding_big, $button-font_big, $button-radius_big);
+  }
 }

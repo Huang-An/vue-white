@@ -27,7 +27,16 @@ const devWebpackConfig = {
     },
     module: {
         rules: [
-            utils.createLintingRule(),
+            {
+                test: /\.(js|vue)$/,
+                loader: 'eslint-loader',
+                enforce: 'pre',
+                include: [path.resolve(__dirname, '../', 'example')],
+                options: {
+                    formatter: require('eslint-friendly-formatter'),
+                    emitWarning: !dev.showEslintErrorsInOverlay
+                }
+            },
             {
                 test: /\.vue$/,
                 loader: 'vue-loader'
@@ -91,7 +100,7 @@ const devWebpackConfig = {
         open: dev.autoOpenBrowser,
         overlay: utils.errorOverlay(),
         publicPath: dev.assetsPublicPath,
-        quiet: false // necessary for FriendlyErrorsPlugin
+        quiet: true // necessary for FriendlyErrorsPlugin
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),

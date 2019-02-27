@@ -1,5 +1,4 @@
-// 设计稿默认750px
-$screen-base: 750px !default;
+@import "config";
 
 // px转vw单位
 @function pxToVw($size) {

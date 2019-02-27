@@ -1,0 +1,18 @@
+@import "../common/var";
+
+@mixin b($block) {
+  $B: $namespace+'-'+$block !global;
+
+  .#{$B} {
+    @content;
+  }
+}
+
+@mixin m($modifier) {
+  $selector: &;
+  @at-root {
+    #{$selector + $element-separator + $modifier} {
+      @content;
+    }
+  }
+}

@@ -1,10 +1,6 @@
 const path = require('path');
 const dev = require('../config/dev');
 
-const resolve = function (dir) {
-    return path.join(__dirname, '..', dir);
-};
-
 exports.errorOverlay = function () {
     if (dev.errorOverlay) {
         return {
@@ -13,19 +9,6 @@ exports.errorOverlay = function () {
         };
     }
     return false;
-};
-
-exports.createLintingRule = function () {
-    return {
-        test: /\.(js|vue)$/,
-        loader: 'eslint-loader',
-        enforce: 'pre',
-        include: [resolve('example')],
-        options: {
-            formatter: require('eslint-friendly-formatter'),
-            emitWarning: !dev.showEslintErrorsInOverlay
-        }
-    };
 };
 
 exports.alias = {
