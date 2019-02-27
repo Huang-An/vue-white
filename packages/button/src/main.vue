@@ -1,5 +1,5 @@
 <template>
-    <button :class="classStyle">
+    <button :class="classStyle" @click="handleClick">
         <slot></slot>
     </button>
 </template>
@@ -20,6 +20,11 @@
         computed: {
             classStyle() {
                 return ['w-button', 'w-button_' + this.size, 'w-button_' + this.type];
+            }
+        },
+        methods: {
+            handleClick() {
+                this.$emit('click');
             }
         }
     };
