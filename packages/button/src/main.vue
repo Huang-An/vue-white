@@ -19,12 +19,12 @@
         },
         computed: {
             classStyle() {
-                return ['w-button', 'w-button_' + this.size, 'w-button_' + this.type];
+                return ['w-button', 'w-button_' + this.size, 'w-button_' + this.type, 'w-touch'];
             }
         },
         methods: {
-            handleClick() {
-                this.$emit('click');
+            handleClick(evt) {
+                this.$emit('click', evt);
             }
         }
     };

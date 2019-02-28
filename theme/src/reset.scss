@@ -1,21 +1,20 @@
-html, body, div, span, h1, h2, h3, h4, h5, h6,
-p, a, img, i, dl, dt, dd, ol, ul, li, form,
-label, table, tbody, tfoot, thead, tr, th,
-td {
+html, body {
   margin: 0;
   padding: 0;
-}
-
-html, body {
   font-weight: 200;
   font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-}
-
-ol, ul {
-  list-style: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+  div, span, h1, h2, h3, h4, h5, h6,
+  p, a, img, i, dl, dt, dd, ol, ul, li, form,
+  label, table, tbody, tfoot, thead, tr, th,
+  td {
+    margin: 0;
+    padding: 0;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  ol, ul {
+    list-style: none;
+  }
 }

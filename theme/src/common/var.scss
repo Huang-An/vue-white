@@ -4,14 +4,22 @@
 $font-size_base: pxToVw(24px);
 
 // 全局默认主题颜色
-$theme-color_primary: #009688;
-$theme-color_default: #ffffff;
-$theme-color_warning: #FF5722;
+$theme-color_white: #ffffff !default;
+$theme-color_green: #009688 !default;
+$theme-color_blue: #1E9FFF !default;
+$theme-color_red: #FF5722 !default;
+$theme-color_gray: #eeeeee !default;
+$theme-color_black: #555555 !default;
 
-// border
+$theme-color_default: $theme-color_white !default;
+$theme-color_primary: $theme-color_green !default;
+$theme-color_normal: $theme-color_blue !default;
+$theme-color_warning: $theme-color_red !default;
+
+// 边框
 $border-width_base: 1px !default;
 $border-style_base: solid !default;
-$border-color_base: #009688 !default;
+$border-color_base: $theme-color_gray !default;
 $border-base: $border-width_base $border-color_base $border-style_base !default;
 $border-none: none !default;
 
@@ -19,17 +27,20 @@ $border-none: none !default;
 // 背景颜色
 $button-bg_default: $theme-color_default !default; // default
 $button-bg_primary: $theme-color_primary !default; // primary
+$button-bg_normal: $theme-color_normal !default; // warning
 $button-bg_warning: $theme-color_warning !default; // warning
 
 // 字体颜色
-$button-color_default: #555 !default; // default
-$button-color_primary: #fff !default; // primary
-$button-color_warning: #fff !default; // warning
+$button-color_default: $theme-color_black !default; // default
+$button-color_primary: $theme-color_white !default; // primary
+$button-color_normal: $theme-color_white !default; // warning
+$button-color_warning: $theme-color_white !default; // warning
 
 // 按钮边框
-$button-border_default: $border-width_base $border-style_base $theme-color_primary;
-$button-border_primary: $border-width_base $border-style_base $theme-color_primary;
-$button-border_warning: $border-width_base $border-style_base $theme-color_warning;
+$button-border_default: $border-width_base $border-style_base $theme-color_green;
+$button-border_primary: $border-width_base $border-style_base $theme-color_green;
+$button-border_normal: $border-width_base $border-style_base $theme-color_blue;
+$button-border_warning: $border-width_base $border-style_base $theme-color_red;
 
 // 间距
 $button-padding_small: pxToVw(12px) pxToVw(30px) !default; // 小

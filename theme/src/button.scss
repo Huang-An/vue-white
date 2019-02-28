@@ -28,6 +28,9 @@
   @include m(primary) {
     @include button-type($button-bg_primary, $button-color_primary, $button-border_primary);
   }
+  @include m(normal) {
+    @include button-type($button-bg_normal, $button-color_normal, $button-border_normal);
+  }
   @include m(warning) {
     @include button-type($button-bg_warning, $button-color_warning, $button-border_warning);
   }
